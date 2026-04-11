@@ -2,6 +2,8 @@
 
 A custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allows you to easily browse and select images directly inside the node editor. 
 
+https://github.com/JanisBe/ComfyUI_FileGallery/raw/master/FileGallery.mp4
+
 ## Features
 - **System Folder Browser**: Open a native system file dialog to quickly pick an image folder.
 - **Dynamic Thumbnail Gallery**: A flexbox grid displaying high-quality thumbnails of all images inside the selected folder.
