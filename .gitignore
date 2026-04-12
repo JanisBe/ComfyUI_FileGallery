@@ -3,3 +3,4 @@ __pycache__/
 .vscode/
 thumbnail_cache/
 /.idea/*
+/node.zip
