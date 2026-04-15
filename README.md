@@ -10,6 +10,13 @@ A custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allo
 - **Adjustable Size**: Live scaling for thumbnails via a dedicated node slider (50px to 300px).
 - **Responsive Layout**: The gallery perfectly stretches along with the ComfyUI node and maximizes interface space.
 - **Efficient Caching**: Generates and caches lightweight thumbnails powered by Pillow for incredibly fast reloading.
+- **File Explorer Toolbar**: A built-in toolbar makes the node feel like a real file browser:
+  - **← (Back)**: Navigate back to the previously visited folder (history stack, greyed out when unavailable).
+  - **⇑ (Up)**: Jump to the parent directory of the current folder.
+  - **Sort dropdown**: Sort images by **Name**, **Date** (modification time), or **Size**.
+  - **ASC / DESC toggle**: Switch between ascending (blue) and descending sort order with a single click.
+  - **Filter input**: Live-filter displayed images — type a substring (e.g. `cat`), a glob extension pattern (e.g. `*.jpg`), or a prefix pattern (e.g. `holiday*`).
+  - **↻ (Refresh)**: Rescan the current folder for new or removed files.
 
 ## Installation
 1. Go to your `ComfyUI/custom_nodes/` directory.
@@ -21,11 +28,12 @@ A custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allo
 
 ## Usage
 Add the node via the regular `Add Node` menu under the `image` category (it's named `File Gallery`).
-- Use **Browse System Folder** to select a directory safely via a native file dialog.
+- Use **Browse System Folder** to select a directory safely via a native file dialog, or type the path directly into the `folder_path` input.
 - The gallery will auto-populate with thumbnails (`.png`, `.jpg`, `.jpeg`, `.webp`).
 - Click any image to instantly select it. Its path/tensor is sent via the outputs (`IMAGE`, `STRING`).
-- Click **Refresh Gallery** to rescan the folder for new files.
+- Use the **toolbar** at the top of the gallery to sort, filter, and navigate folders without leaving the node editor.
 
 ### Requirements
 The node uses standard ComfyUI dependencies (`Pillow`, `numpy`, `torch`).
 To display the system folder selection window, your environment needs to support `tkinter` (which is typically bundled with standard Python distributions on Windows/Mac/Linux).
+

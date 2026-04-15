@@ -4,3 +4,4 @@ __pycache__/
 thumbnail_cache/
 /.idea/*
 /node.zip
+agents.md

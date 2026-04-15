@@ -17,16 +17,18 @@ def get_thumbnails_list(folder_path):
             if ext in VALID_EXTENSIONS:
                 full_path = os.path.join(folder_path, filename)
                 if os.path.isfile(full_path):
+                    stat = os.stat(full_path)
                     images.append({
                         "filename": filename,
                         "path": full_path,
-                        "thumbnail": f"/file_gallery/thumbnail?file={full_path}"
+                        "thumbnail": f"/file_gallery/thumbnail?file={full_path}",
+                        "size": stat.st_size,
+                        "mtime": stat.st_mtime,
                     })
     except Exception as e:
         print(f"Error reading folder {folder_path}: {e}")
     
-    # Sort files alphabetically
-    images.sort(key=lambda x: x["filename"].lower())
+    # Return unsorted – sorting is handled client-side
     return images
 
 def generate_thumbnail(file_path, size=(512, 512)):
