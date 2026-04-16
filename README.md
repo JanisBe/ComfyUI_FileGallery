@@ -19,12 +19,25 @@ A custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allo
   - **↻ (Refresh)**: Rescan the current folder for new or removed files.
 
 ## Installation
+
+### Method 1: Comfy-CLI (Recommended)
+If you have [comfy-cli](https://github.com/Comfy-Org/comfy-cli) installed, simply run:
+```bash
+comfy node install filegallery
+```
+
+### Method 2: ComfyUI Manager
+Search for **File Gallery** in the ComfyUI Manager and click **Install**.
+
+### Method 3: Manual Clone (Git)
 1. Go to your `ComfyUI/custom_nodes/` directory.
 2. Clone this repository:
    ```bash
    git clone https://github.com/JanisBe/ComfyUI_FileGallery.git
    ```
 3. Restart ComfyUI.
+
+> **No additional installation needed.** This node relies only on libraries that are already bundled with ComfyUI (`Pillow`, `numpy`, `torch`, `aiohttp`). No `pip install` step is required.
 
 ## Usage
 Add the node via the regular `Add Node` menu under the `image` category (it's named `File Gallery`).
