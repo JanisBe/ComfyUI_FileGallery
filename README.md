@@ -43,7 +43,7 @@ Search for **File Gallery** in the ComfyUI Manager and click **Install**.
 Add the node via the regular `Add Node` menu under the `image` category (it's named `File Gallery`).
 - Use **Browse System Folder** to select a directory safely via a native file dialog, or type the path directly into the `folder_path` input.
 - The gallery will auto-populate with thumbnails (`.png`, `.jpg`, `.jpeg`, `.webp`).
-- Click any image to instantly select it. Its path/tensor is sent via the outputs (`IMAGE`, `STRING`).
+- Click any image to instantly select it. Its path/tensor and original dimensions are sent via the outputs (`IMAGE`, `STRING`, `width`, `height`).
 - Use the **toolbar** at the top of the gallery to sort, filter, and navigate folders without leaving the node editor.
 
 ### Requirements
